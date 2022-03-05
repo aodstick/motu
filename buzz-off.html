@@ -9,6 +9,14 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
         <title>Buzz-Off</title>
         <style type="text/css">
+            :root {
+                --buzz-off-primary:#BC9D54;
+                --buzz-off-secondary:#2F2720;
+                --text-background-color:#222222;
+                --text-hover-color:#111111;
+                --text-primary:#ffffff;
+                --text-subdued:#999999;
+            }
             body{
                 margin:0;
                 padding:0;
@@ -16,12 +24,8 @@
                     Roboto, Oxygen-Sans, Ubuntu, Cantarell,
                     "Helvetica Neue", sans-serif
                 ;
-                color:#fff;
-            }
-            :root {
-                --buzz-off-primary:#BC9D54;
-                --buzz-off-secondary:#2F2720;
-                --text-background-color:#222222;
+                color:var(--text-primary);
+                font-size: 16px;
             }
             .container{
                 display: grid;
@@ -56,6 +60,10 @@
                 border-left:1px solid #2F2720;
             }*/
             .img-responsive{
+                display: none;
+                width: 100%;
+            }
+            .img-responsive.active{
                 display: block;
                 width: 100%;
             }
@@ -63,37 +71,79 @@
                 grid-column: 2;
                 grid-row: 2;
             }
+            .affiliation{
+                text-transform: uppercase;
+                margin-bottom: 0px;
+                color:var(--buzz-off-primary);
+                font-size:14px;
+            }
             h1{
-                font-family: 'DM Serif Display', serif;
+                font-weight: 900;
                 font-size:64px;
                 margin:0;
                 padding:0;
+                text-shadow: 0px 0px 10px #000;
             }
             p{
                 margin:0 0 10px 0;
                 padding:0;
             }
-            .items{
-                display: flex;
-                gap:10px;
+            .lead{
+                margin-bottom:48px;
             }
             .collection{
-                border-radius: 8px;
-                border:1px solid var(--buzz-off-primary);
-                padding:10px;
-                margin-bottom: 10px;
-                flex: 1;
+                margin:0;
+                padding:0;
             }
-            .collection p{
+            .item{
+                border-top:1px solid var(--buzz-off-primary);
+                background: var(--text-background-color);
+                padding:16px 4px;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                opacity: 50%;
                 margin:0;
             }
-            .collection small{
-                text-transform: uppercase;
+            .item p{
+                margin:0;
             }
-            .affiliation{
+            .item .brand{
                 text-transform: uppercase;
-                margin-bottom: 0px;
-                color:var(--buzz-off-primary);
+                display: flex;
+                align-items: center;
+            }
+            .item.active .brand:before {
+                display: block;
+                content: ' ';
+                background-image: url('images/circle-check-solid.svg');
+                background-size: 20px 20px;
+                height: 20px;
+                width: 20px;
+                margin-right:10px;
+            }
+            .item .line{
+                color:var(--text-subdued);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .item span{
+                border:1px solid var(--buzz-off-primary);
+                display: block;
+                font-size: 14px;
+                padding:2px 10px;
+                border-radius:10px;
+                color:var(--text-primary);
+            }
+            .item.active{
+                opacity: 100%;
+                font-weight: 700;
+            }
+            .item:hover{
+                cursor:pointer;
+                opacity: 100%;
             }
         </style>
     </head>
@@ -103,24 +153,45 @@
                 <div class="content">
                     <p class="affiliation">Member of the Heroic Warriors</p>
                     <h1>Buzz-Off</h1>
-                    <p>Heroic spy in the sky</p>
-                    <div class="items">
-                        <div class="collection">
-                            <small>Vintage</small>
-                            <p>First released 1984</p>
-                        </div>
-                        <div class="collection">
-                            <small>200x</small>
-                            <p>First released 2001</p>
-                        </div>
-                    </div>
+                    <p class="lead">Heroic spy in the sky</p>
+                    <ul class="collection">
+                        <li class="item toggle active">
+                            <p class="brand">Mattel</p>
+                            <p class="line">Vintage <span>1984</span></p>
+                        </li>
+                        <li class="item toggle">
+                            <p class="brand">Mattel</p>
+                            <p class="line">200X <span>2001</span></p>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="image">
                 <div class="frame">
-                    <img src="images/Buzz-Off.png" class="img-responsive" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));" />
+                    <img src="images/Buzz-Off-Vintage.png" class="img-responsive toggle active" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));" />
+                    <img src="images/Buzz-Off-200X.png" class="img-responsive toggle" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));" />
                 </div>
             </div>
         </div>
+        <script>
+            function toggleItem(elem) {
+                for (var i = 0; i < elem.length; i++) {
+                    elem[i].addEventListener("click", function(e) {
+                    var current = this;
+                    for (var i = 0; i < elem.length; i++) {
+                        if (current != elem[i]) {
+                        elem[i].classList.remove('active');
+                        } else if (current.classList.contains('active') === true) {
+                        current.classList.remove('active');
+                        } else {
+                        current.classList.add('active')
+                        }
+                    }
+                    e.preventDefault();
+                    });
+                };
+            }
+            toggleItem(document.querySelectorAll('.toggle'));
+        </script>
     </body>
 </html>
