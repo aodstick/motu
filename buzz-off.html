@@ -212,16 +212,6 @@
             <aside>
                 <ul class="tabs-content">
                     <li>
-                        <picture> 
-                            <source   media=”(min-width: 900px)”   
-                            srcset=“image-lg_1x.webp 1x, image-lg_2x.webp 2x”   
-                            type=“image/webp” > 
-                            <source   media=”(min-width: 601px)”   
-                            srcset=“image-md_1x.webp 1x, image-md_2x.webp 2x”   type=“image/webp” > 
-                            <source   media=”(max-width: 600px)”   
-                            srcset=“image-sm_1x.webp 1x, image-sm_1x.webp 1x”   type=“image/webp” > 
-                            <img   src=“image-lg_1x.jpg”   type=“image/jpeg” ”>
-                            </picture>
                         <picture>
                             <source srcset="images/Buzz-Off-Vintage@2x.webp 2x" type="image/webp">
                             <source srcset="images/Buzz-Off-Vintage.webp" type="image/webp">
@@ -229,9 +219,14 @@
                             <source srcset="images/Buzz-Off-Vintage.png" type="image/png"> 
                             <img src="images/Buzz-Off-Vintage.png" class="img-responsive" alt="Vintage Mattel Buzz-Off figure" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
                         </picture>
-                        <!--<img src="images/Buzz-Off-Vintage.png" class="img-responsive" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));" />-->
                     </li>
-                    <li><img src="images/Buzz-Off-200X.png" class="img-responsive" /></li>
+                    <li><picture>
+                        <source srcset="images/buzz-off-200x@2x.webp 2x" type="image/webp">
+                        <source srcset="images/buzz-off-200x.webp" type="image/webp">
+                        <source srcset="images/buzz-off-200x@2x.png 2x" type="image/png"> 
+                        <source srcset="images/buzz-off-200x.png" type="image/png"> 
+                        <img src="images/buzz-off-200x.png" class="img-responsive" alt="Vintage Mattel Buzz-Off figure" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
+                    </picture></li>
                 </ul>
             </aside>
             <div class="shade" style="background: var(--buzz-off-primary);"></div>
