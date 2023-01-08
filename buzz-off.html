@@ -97,33 +97,24 @@
                 align-items: center;
                 gap:10px;
             }
-            .item.active .brand:before {
-                display: block;
-                content: ' ';
-                background-image: url('images/circle-check-solid.svg');
-                background-size: 20px 20px;
-                height: 20px;
-                width: 20px;
-            }
             .item span{
                 color:var(--text-subdued);
             }
             .item .year{
                 border:1px solid var(--buzz-off-primary);
+                background:var(--buzz-off-primary);
                 display: block;
                 font-size: 14px;
                 padding:2px 10px;
                 border-radius:20px;
-                color:var(--text-primary);
+                color:var(--text-background-color);
             }
             .item.active{
-                font-weight: 700;
-                background: var(--text-hover-color);
-                border:1px solid var(--text-background-color);
+                border:1px solid var(--buzz-off-primary);
             }
             .item:hover{
                 cursor:pointer;
-                border:1px solid var(--buzz-off-primary);
+                background: var(--text-hover-color);
             }
             .tabs-content {
                 margin: 0;
@@ -162,19 +153,19 @@
                 animation-name: fadeInUp;
             }
             /* responsive */
-            @media only screen and (max-width: 600px) {
+            @media only screen and (max-width: 1023px) {
                 main{
                     grid-template-columns: 8% 92%;
                     grid-template-rows: auto auto;
                 }
                 section{
                     grid-column: 2;
-                    grid-row:1;
+                    grid-row:2;
                     padding:30px;
                 }
                 aside{
                     grid-column: 1 / span 2;
-                    grid-row:2;
+                    grid-row:1;
                 }
                 .shade{
                     grid-column: 1 / span 1;
@@ -205,9 +196,6 @@
                         <p class="year">2001</p>
                     </li>
                 </ul>
-
-                <!--https://codepen.io/chriscoyier/pen/XwbNwX-->
-
             </section>
             <aside>
                 <ul class="tabs-content">
@@ -225,7 +213,7 @@
                         <source srcset="images/buzz-off-200x.webp" type="image/webp">
                         <source srcset="images/buzz-off-200x@2x.png 2x" type="image/png"> 
                         <source srcset="images/buzz-off-200x.png" type="image/png"> 
-                        <img src="images/buzz-off-200x.png" class="img-responsive" alt="Vintage Mattel Buzz-Off figure" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
+                        <img src="images/buzz-off-200x.png" class="img-responsive" alt="200x Mattel Buzz-Off figure" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
                     </picture></li>
                 </ul>
             </aside>
