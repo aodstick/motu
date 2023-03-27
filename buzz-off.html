@@ -76,45 +76,40 @@
             .collection{
                 margin:0;
                 padding:0;
+                display: flex;
+                align-content: space-between;
+                list-style: none;
+                flex-wrap: wrap;
             }
             .item{
                 border:1px solid var(--text-hover-color);
-                padding:16px;
+                padding:8px 16px;
                 box-sizing: border-box;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin:0 0 4px 0;
                 border-radius:8px;
-                box-shadow:0px 0px 12px rgba(0,0,0,.25);
+                color:#666;
+                font-size:20px;
+                width:30%;
+                margin:0 2.5% 16px 0;
             }
             .item p{
                 margin:0;
             }
             .item .brand{
                 text-transform: uppercase;
-                display: flex;
-                align-items: center;
-                gap:10px;
-            }
-            .item span{
-                color:var(--text-subdued);
-            }
-            .item .year{
-                border:1px solid var(--buzz-off-primary);
-                background:var(--buzz-off-primary);
+                color:var(--buzz-off-primary);
+                font-size:14px;
                 display: block;
-                font-size: 14px;
-                padding:2px 10px;
-                border-radius:20px;
-                color:var(--text-background-color);
+                font-weight: normal;
             }
             .item.active{
                 border:1px solid var(--buzz-off-primary);
+                background:#000;
+                color:#fff;
+                font-weight: bold;
             }
             .item:hover{
                 cursor:pointer;
-                background: var(--text-hover-color);
+                background: #000;
             }
             .tabs-content {
                 margin: 0;
@@ -160,12 +155,12 @@
                 }
                 section{
                     grid-column: 2;
-                    grid-row:2;
+                    grid-row:1;
                     padding:30px;
                 }
                 aside{
                     grid-column: 1 / span 2;
-                    grid-row:1;
+                    grid-row:2;
                 }
                 .shade{
                     grid-column: 1 / span 1;
@@ -176,6 +171,17 @@
                 }
                 .lead{
                     margin-bottom:32px;
+                }
+                .collection{
+                    margin:0 0 20px 0;
+                    padding:0;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    overflow-x: scroll;
+                }
+                .item{
+                    width:auto;
+                    margin:0 10px 0px 0;
                 }
             } 
         </style>
@@ -188,12 +194,10 @@
                 <p class="lead">Heroic spy in the sky</p>
                 <ul class="collection">
                     <li class="item active animated fadeInUp">
-                        <p class="brand">Mattel <span>Vintage</span></p>
-                        <p class="year">1984</p>
+                        <p><span class="brand">Mattel</span>Vintage</p>
                     </li>
                     <li class="item animated fadeInUp" style="animation-delay: .25s;">
-                        <p class="brand">Mattel <span>200X</span></p>
-                        <p class="year">2001</p>
+                        <p><span class="brand">Mattel</span>200X</p>
                     </li>
                 </ul>
             </section>
