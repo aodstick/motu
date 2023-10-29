@@ -15,7 +15,7 @@
                 --text-background-color:#222222;
                 --text-hover-color:#111111;
                 --text-primary:#ffffff;
-                --text-subdued:#999999;
+                --text-subdued:#666666;
             }
             /* structure */
             html{
@@ -70,21 +70,12 @@
                 grid-column: 1 / span 3;
                 grid-row: 1 / span 3;
                 z-index: 1;
-                /*background: var(--primary-color);*/
                 background:
                     radial-gradient(ellipse at 20% 20%, #CBA421 0%, transparent 70%),
                     radial-gradient(ellipse at 60% 20%, #BC9D54 0%, transparent 70%),
                     radial-gradient(ellipse at 100% 20%, #CBA421 0%, transparent 70%),
                     radial-gradient(ellipse at 100% 100%, #B0782B 0%, transparent 70%),
                     radial-gradient(ellipse at 20% 100%, #B87F28 0%, transparent 70%);
-                    /*background:
-                    radial-gradient(ellipse at 20% 20%, #CA5049 0%, transparent 70%),
-                    radial-gradient(ellipse at 60% 20%, #F0352A 0%, transparent 70%),
-                    radial-gradient(ellipse at 100% 20%, #CA5049 0%, transparent 70%),
-                    radial-gradient(ellipse at 100% 100%, #D28A88 0%, transparent 70%),
-                    radial-gradient(ellipse at 20% 100%, #E47976 0%, transparent 70%);*/
-                    /*background: rgb(210,138,136);
-background: linear-gradient(0deg, rgba(210,138,136,1) 0%, rgba(240,53,42,1) 100%);*/
             }
             .texture{
                 grid-column: 1 / span 3;
@@ -124,9 +115,9 @@ background: linear-gradient(0deg, rgba(210,138,136,1) 0%, rgba(240,53,42,1) 100%
                 margin:0;
                 padding:0;
                 list-style: none;
-                /*display: flex;
+                display: flex;
                 align-content: space-between;
-                flex-wrap: wrap;*/
+                flex-wrap: wrap;
             }
             .item{
                 border:1px solid #111;
@@ -136,18 +127,23 @@ background: linear-gradient(0deg, rgba(210,138,136,1) 0%, rgba(240,53,42,1) 100%
                 border-radius:8px;
                 color:#666;
                 font-size:1rem;
-                margin:0 0 8px 0;
+                margin:0 1% 8px 0;
+                width:24%;
             }
             .item p{
                 margin:0;
             }
             .item .brand{
-                color:var(--text-primary);
+                color:var(--text-subdued);
+                font-size:0.875rem;
                 font-weight: normal;
-                padding-right: 8px;
+                display: block;
+                text-transform: uppercase;
+                margin-bottom:4px;
             }
             .item.active{
                 border:1px solid var(--secondary-color);
+                color:var(--text-primary);
             }
             .item:hover{
                 cursor:pointer;
@@ -208,23 +204,22 @@ background: linear-gradient(0deg, rgba(210,138,136,1) 0%, rgba(240,53,42,1) 100%
                     grid-column: 1 / span 1;
                     grid-row: 1 / span 2;
                 }
-                h1{
-                    /*font-size:48px;*/
-                }
                 .lead{
                     margin-bottom:32px;
                 }
                 .collection{
-                    margin:0 0 20px 0;
-                    padding:0;
+                    margin:0 0 4px 0;
+                    padding:0 0 16px 0;
                     display: flex;
                     flex-wrap: nowrap;
                     overflow-x: scroll;
+                    overflow-y: hidden;
                 }
                 .item{
                     width:auto;
                     margin:0 10px 0px 0;
                 }
+                .item:last-child{margin:0;}
             } 
         </style>
     </head>
