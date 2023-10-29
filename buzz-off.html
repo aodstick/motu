@@ -18,6 +18,9 @@
                 --text-subdued:#999999;
             }
             /* structure */
+            html{
+                font-size: 16px;
+            }
             body{
                 margin:0;
                 padding:0;
@@ -27,7 +30,7 @@
                     "Helvetica Neue", sans-serif
                 ;
                 color:var(--text-primary);
-                font-size: 16px;
+                font-size: 1rem;
             }
             main{
                 display: grid;
@@ -97,18 +100,22 @@ background: linear-gradient(0deg, rgba(210,138,136,1) 0%, rgba(240,53,42,1) 100%
                 text-transform: uppercase;
                 margin-bottom: 0px;
                 color:var(--secondary-color);
-                font-size:14px;
+                font-size: clamp(0.875rem, 0.607rem + 0.714vw, 1rem);
+                line-height: 1;
             }
             h1{
                 font-weight: 900;
-                font-size:64px;
-                margin:0;
+                font-size: clamp(3.5rem, -1.911rem + 13.095vw, 6rem);
+                line-height: 1;
+                margin:10px 0;
                 padding:0;
                 text-shadow: 0px 0px 10px #000;
             }
             p{
                 margin:0 0 10px 0;
                 padding:0;
+                font-size: clamp(1rem, 0.643rem + 0.952vw, 1.5rem);
+                line-height: 1;
             }
             .lead{
                 margin-bottom:48px;
@@ -116,40 +123,34 @@ background: linear-gradient(0deg, rgba(210,138,136,1) 0%, rgba(240,53,42,1) 100%
             .collection{
                 margin:0;
                 padding:0;
-                display: flex;
-                align-content: space-between;
                 list-style: none;
-                flex-wrap: wrap;
+                /*display: flex;
+                align-content: space-between;
+                flex-wrap: wrap;*/
             }
             .item{
-                border:1px solid var(--text-hover-color);
-                padding:8px 16px;
+                border:1px solid #111;
+                background:#111;
+                padding:16px;
                 box-sizing: border-box;
                 border-radius:8px;
                 color:#666;
-                font-size:20px;
-                width:30%;
-                margin:0 2.5% 16px 0;
+                font-size:1rem;
+                margin:0 0 8px 0;
             }
             .item p{
                 margin:0;
             }
             .item .brand{
-                text-transform: uppercase;
-                color:var(--secondary-color);
-                font-size:14px;
-                display: block;
+                color:var(--text-primary);
                 font-weight: normal;
+                padding-right: 8px;
             }
             .item.active{
                 border:1px solid var(--secondary-color);
-                background:#000;
-                color:#fff;
-                font-weight: bold;
             }
             .item:hover{
                 cursor:pointer;
-                background: #000;
             }
             .tabs-content {
                 margin: 0;
@@ -208,7 +209,7 @@ background: linear-gradient(0deg, rgba(210,138,136,1) 0%, rgba(240,53,42,1) 100%
                     grid-row: 1 / span 2;
                 }
                 h1{
-                    font-size:48px;
+                    /*font-size:48px;*/
                 }
                 .lead{
                     margin-bottom:32px;
@@ -244,6 +245,12 @@ background: linear-gradient(0deg, rgba(210,138,136,1) 0%, rgba(240,53,42,1) 100%
                     <li class="item animated fadeInUp" style="animation-delay: .25s;">
                         <p><span class="brand">Mattel</span>200X</p>
                     </li>
+                    <li class="item animated fadeInUp" style="animation-delay: .25s;">
+                        <p><span class="brand">Mattel</span>Origins</p>
+                    </li>
+                    <li class="item animated fadeInUp" style="animation-delay: .25s;">
+                        <p><span class="brand">Funko</span>POP!</p>
+                    </li>
                 </ul>
             </section>
             <aside>
@@ -264,6 +271,8 @@ background: linear-gradient(0deg, rgba(210,138,136,1) 0%, rgba(240,53,42,1) 100%
                         <source srcset="images/buzz-off-200x.png" type="image/png"> 
                         <img src="images/buzz-off-200x.png" class="img-responsive" alt="200x Mattel Buzz-Off figure" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
                     </picture></li>
+                    <li>Origins</li>
+                    <li>POP!</li>
                 </ul>
             </aside>
             <div class="texture"></div>
