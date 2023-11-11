@@ -4,14 +4,16 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Collection</title>
-        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="icon" href="images/spirit.svg" type="image/svg+xml">
+        <title>MOTU Collection</title>
         <style type="text/css">
             /* variables */
             :root {
-                --primary-color:#BC9D54;
-                --secondary-color:#CBA421;
-                --tertiary-color:#2F2720;
+                --figure-primary-color:#bc5454;
+                --figure-secondary-color:#cb5421;
                 --text-background-color:#222222;
                 --text-hover-color:#111111;
                 --text-primary:#ffffff;
@@ -32,8 +34,18 @@
                 color:var(--text-primary);
                 font-size: 1rem;
             }
+            main{
+                background: url(images/background.webp) no-repeat center center fixed; 
+                width: 100%;
+                height:100vh;
+                background-size: cover;
+                overflow: scroll;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+            }
             aside{
-                width: 250px;
+                width: 100%;
             }
             .figure{
                 display: grid;
@@ -51,10 +63,13 @@
                 grid-column: 2;
                 grid-row: 2;
                 z-index: 5;
-background: linear-gradient(180deg, #FC7272 0%, #873030 100%);
+                background: linear-gradient(180deg, #FC7272 0%, #873030 100%);
                 width: 100%;
                 height: 100%;
                 border-radius: 8px;
+            }
+            .enemy div.square{
+                background: linear-gradient(180deg, #52A8F7 0%, #1E2B5A 100%);
             }
             .img-responsive{
                 max-width: 100%;
@@ -65,7 +80,7 @@ background: linear-gradient(180deg, #FC7272 0%, #873030 100%);
                 color: #111111;
                 padding:8px 16px;
                 border-radius: 4px;
-                font-size: .875rem;
+                font-size: .75rem;
                 display: block;
                 text-decoration: none;
                 margin:16px;
@@ -75,17 +90,65 @@ background: linear-gradient(180deg, #FC7272 0%, #873030 100%);
                 padding:0;
             }
             .name{
-                font-size: 1rem;
-                font-weight: 600;
+                font-size: 1.25rem;
+                font-weight: 900;
+            }
+            aside.hero .figure{
+                grid-template-rows: 10% 80% 10%;
+            }
+            aside.hero .figure div.square{
+                background: linear-gradient(180deg, #222222 0%, #000000 100%);
+                border-radius: 8px;
+            }
+            aside.hero .info{
+                color: #fff;
+                padding:10px 16px;
+                border-radius: 0px;
+                font-size: .7rem;
+                text-decoration: none;
+                margin:0px;
+                grid-column: 2;
+                grid-row: 2;
+                z-index: 15;
+                background:none;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                text-shadow: 0 0 6px rgba(0,0,0,1.0);
+            }
+            aside.hero .name{
+                font-size: 1.5rem;
+                font-weight: 900;
+            }
+            article{
+                width:100%;
+                aspect-ratio: 1;
+                background-size:225%;
+                background-repeat:no-repeat;
+                background-position: top center;
+            }
+            article a{
+                display: flex;
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+                align-items: baseline;
+                justify-content: flex-end;
+                font-size: 2rem;
+                font-weight: 900;
+                text-decoration: none;
+                color:#fff;
+                padding: 16px;
+                box-sizing: border-box;
+                text-shadow: 0 0 4px rgba(0,0,0,1.0);
             }
         </style>
     </head>
     <body>
         <main>
-            <section>
                 <aside>
                     <div class="figure">
-                        <img src="images/Buzz-Off-Vintage.png" class="img-responsive" alt="Vintage Mattel Buzz-Off figure" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
+                        <img src="images/Buzz-Off-Vintage.webp" class="img-responsive" alt="Vintage Mattel Buzz-Off figure" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
                         <div class="square"></div>
                     </div>
                     <a class="info" href="buzz-off.html">
@@ -93,7 +156,42 @@ background: linear-gradient(180deg, #FC7272 0%, #873030 100%);
                         <p>Heroic eye in the sky</p>
                     </a>
                 </aside>
-            </section>
+                <aside class="enemy">
+                    <div class="figure">
+                        <img src="images/Webstor.webp" class="img-responsive" alt="Vintage Mattel Buzz-Off figure" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
+                        <div class="square"></div>
+                    </div>
+                    <a class="info" href="webstor.html">
+                        <p>Evil Enemy</p>
+                        <p class="name">Webstor</p>
+                    </a>
+                </aside>
+                <aside class="hero">
+                    <div class="figure">
+                        <img src="images/Buzz-Off-Vintage.webp" class="img-responsive" alt="Vintage Mattel Buzz-Off figure" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
+                        <div class="square"></div>
+                        <a class="info" href="buzz-off.html">
+                            <p>Heroic Warriors</p>
+                            <p class="name">Buzz-Off</p>
+                        </a>
+                    </div>
+                </aside>
+                <aside class="hero">
+                    <div class="figure">
+                        <img src="images/Webstor.webp" class="img-responsive" alt="Vintage Mattel Buzz-Off figure" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
+                        <div class="square"></div>
+                        <a class="info" href="webstor.html">
+                            <p>Evil Enemy</p>
+                            <p class="name">Webstor</p>
+                        </a>
+                    </div>
+                </aside>
+                <article style="background-image: url(images/Buzz-Off-Vintage.webp);background-color: var(--primary-color);">
+                    <a href="buzz-off.html">Buzz-Off</a>
+                </article>
+                <article style="background-image: url(images/Webstor.webp);background-color:#1E2B5A;">
+                    <a href="webstor.html">Webstor</a>
+                </article>
         </main>
     </body>
 </html>
