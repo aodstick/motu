@@ -33,18 +33,15 @@ header{
     padding:16px;
     text-align: center;
 }
-.list{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
 article{
-    padding: 16px;
+    padding: 2%;
     transition:all 200ms ease-in-out;
+    box-sizing: border-box;
 }
 .figure{
     display: grid;
-    grid-template-columns: 16% 68% 16%;
-    grid-template-rows: 16% 68% 16%;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10% 80% 10%;
     width: 100%;
 }
 .figure img{
@@ -80,7 +77,7 @@ article{
 }
 .name{
     display: grid;
-    grid-template-columns: 16% 68% 16%;
+    grid-template-columns: 10% 80% 10%;
     grid-template-rows: auto;
 }
 .name a{
@@ -109,6 +106,30 @@ article{
 .name a:hover{
     background: #000;
     transition: all 200ms ease-in;
+}
+
+.snakemen{
+    background:var(--text-background-color);
+    border-radius: 16px;
+    border:1px solid #69F752;
+    /*box-shadow: 0 0 10px #69F752;*/
+    margin:16px;
+}
+.snakemen a{
+    text-decoration: none;
+}
+.snakemen .name{
+    color: #fff;
+    display: block;
+    font-size: clamp(1.75rem, 0.607rem + 0.714vw, 1.1rem);
+    font-weight: 600;
+    transition: all 400ms ease-out;
+}
+.snakemen .name span{
+    display: block;
+    font-size: clamp(0.6rem, 0.607rem + 0.714vw, .875rem);
+    font-weight: 400;
+    color:var(--text-subdued);
 }
 
 /* detail page */
@@ -217,6 +238,25 @@ p{
     align-content: space-between;
     flex-wrap: wrap;
 }
+.groups{
+    display: flex;
+    flex-wrap: wrap;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin:0;
+    padding:0;
+    width:50%;
+    box-sizing: border-box;
+}
+.list.heroes, .list.snakes{
+    direction: rtl;
+}
 .item{
     border:1px solid var(--text-hover-color);
     background:var(--text-hover-color);
@@ -288,6 +328,9 @@ p{
     -webkit-animation-name: fadeInUp;
     animation-name: fadeInUp;
 }
+article{
+    width:25%;
+}
 /* responsive */
 @media only screen and (max-width: 1180px) {
     .list{
@@ -299,6 +342,9 @@ p{
     nav a{
         width:32px;
         height:32px;
+    }
+    article{
+        width:33%;
     }
 }
 
@@ -382,4 +428,12 @@ p{
         margin:0 10px 0px 0;
     }
     .item:last-child{margin:0;}
+    article{
+        width:50%;
+    }
 } 
+@media only screen and (max-width: 480px) {
+    article{
+        width:100%;
+    }
+}
