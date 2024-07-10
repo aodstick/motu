@@ -252,7 +252,7 @@ p{
     width:50%;
     box-sizing: border-box;
 }
-.list.heroes, .list.snakes{
+.list.heroes, .list.hordes, .list.rebels{
     direction: rtl;
 }
 .item{
