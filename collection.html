@@ -9,13 +9,14 @@
         <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
         <link rel="icon" href="images/spirit.svg" type="image/svg+xml">
         <title>MOTU Collection</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
         <link href="css/styles.css?9" rel="stylesheet">
     </head>
     <body>
+        <header>
+            <img src="images/motu-logo.webp" class="img-responsive" alt="Classic Masters of the Universe logo" />
+        </header>
         <main class="poster">
-            <header>
-                <img src="images/motu-logo.webp" class="img-responsive" alt="Classic Masters of the Universe logo" />
-            </header>
             <div class="groups">
                 <div class="list heroes">
                     <h2>Heroic Heroes</h2>
@@ -260,32 +261,44 @@
                     <h2>Evil Enemies</h2>
                     <a class="figure" href="skeletor.html">
                         <div class="image">
-                            <img src="images/skeletor.webp" class="img-responsive" alt="Funko Pop Battle Armor Skeletor figure" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
+                            <img
+                            srcset="images/skeletor-funko-pop-small@2x.webp 2x"
+                            src="images/skeletor-funko-pop-small.webp"
+                            class="img-responsive"
+                            alt="Funko POP Skeletor figure" />
                             <div class="square"></div>
                         </div>
                         <div class="name">
                             Skeletor<span>Lord of Destruction</span>
                         </div>
                     </a>
-                    <!--<a class="figure" href="#">
+                    <a class="figure" href="beast-man.html">
                         <div class="image">
-                            <img src="images/" class="img-responsive" alt="" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
+                            <img
+                            srcset="images/beast-man-funko-pop-small@2x.webp 2x"
+                            src="images/beast-man-funko-pop-small.webp"
+                            class="img-responsive"
+                            alt="Funko POP Beast Man figure" />
                             <div class="square"></div>
                         </div>
                         <div class="name">
                             Beast Man<span>Savage Henchman</span>
                         </div>
                     </a>
-                    <a class="figure" href="#">
+                    <a class="figure" href="mer-man.html">
                         <div class="image">
-                            <img src="images/" class="img-responsive" alt="" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
+                            <img
+                            srcset="images/mer-man-funko-pop-alt-small@2x.webp 2x"
+                            src="images/mer-man-funko-pop-alt-small.webp"
+                            class="img-responsive"
+                            alt="Funko POP Mer-Man figure" />
                             <div class="square"></div>
                         </div>
                         <div class="name">
                             Mer-Man<span>Ocean Warlord</span>
                         </div>
                     </a>
-                    <a class="figure" href="#">
+                    <!--<a class="figure" href="#">
                         <div class="image">
                             <img src="images/" class="img-responsive" alt="" style="filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));">
                             <div class="square"></div>
@@ -569,7 +582,7 @@
                     </a>
                 </div>
                 <div class="list neutral">
-                    <h2>Neutral Warriors</h2>
+                    <h2>Neutral</h2>
                     <a class="figure" href="zodac.html">
                         <div class="image">
                             <img
@@ -589,5 +602,17 @@
                 
             </footer>
         </main>
+        <script>
+            	$(document).on("scroll", function(){
+		if
+      ($(document).scrollTop() > 100){
+		  $("header").addClass("shrink");
+		}
+		else
+		{
+			$("header").removeClass("shrink");
+		}
+	});
+        </script>
     </body>
 </html>
