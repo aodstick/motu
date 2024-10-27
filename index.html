@@ -12,9 +12,13 @@
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
         <link href="css/styles.css?13" rel="stylesheet">
     </head>
-    <body>
+    <body class="rock">
         <header>
-            <img src="images/motu-logo.webp" class="img-responsive" alt="Classic Masters of the Universe logo" />
+            <div><a href="index.html">Figures</a></div>
+            <div><a href="vehicles.html">Vehicles</a></div>
+            <a href="index.html"><img src="images/motu-logo.webp" class="img-responsive" alt="Classic Masters of the Universe logo" /></a>
+            <div><a href="playsets.html">Playsets</a></div>
+            <div><a href="#">Accessories</a></div>
         </header>
         <main class="poster">
             <div class="groups">
@@ -400,32 +404,6 @@
                             Ninjor<span>Ninja Warrior</span>
                         </div>
                     </a>
-                    <a class="figure" href="night-stalker.html">
-                        <div class="image">
-                            <img
-                            srcset="images/night-stalker-funko-pop-small@2x.webp 2x"
-                            src="images/night-stalker-funko-pop-small.webp"
-                            class="img-responsive"
-                            alt="Funko POP Night Stalker figure" />
-                            <div class="square"></div>
-                        </div>
-                        <div class="name">
-                            Night Stalker<span>Armored Battle Steed</span>
-                        </div>
-                    </a>
-                    <a class="figure" href="snake-mountain.html">
-                        <div class="image">
-                            <img
-                            srcset="images/snake-mountain-funko-pop-small@2x.webp 2x"
-                            src="images/snake-mountain-funko-pop-small.webp"
-                            class="img-responsive"
-                            alt="Funko POP Snake Mountain figure" />
-                            <div class="square"></div>
-                        </div>
-                        <div class="name">
-                            Snake Mountain<span>Stronghold of Skeletor</span>
-                        </div>
-                    </a>
                 </div>
                 <div class="list hordes">
                     <h2>Evil Horde</h2>
@@ -626,17 +604,5 @@
                 
             </footer>
         </main>
-        <script>
-            	$(document).on("scroll", function(){
-		if
-      ($(document).scrollTop() > 100){
-		  $("header").addClass("shrink");
-		}
-		else
-		{
-			$("header").removeClass("shrink");
-		}
-	});
-        </script>
     </body>
 </html>
