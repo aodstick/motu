@@ -306,7 +306,6 @@ p{
 }
 .item p{
     margin:0;
-    display: flex;
 }
 .item .brand{
     color:var(--text-subdued);
@@ -331,9 +330,9 @@ p{
     font-size:12px;
     font-weight: bold;
     background: #000;
-    width:24px;
-    height:24px;
-    border-radius:24px;
+    width:28px;
+    height:28px;
+    border-radius:28px;
     color:#fff;
     display:flex;
     align-items: center;
@@ -341,6 +340,9 @@ p{
     line-height: 1;
     margin-left:4px;
     border:1px solid #666;
+    position:absolute;
+    top:-4px;
+    right:-4px;
 }
 .tabs-content {
     margin: 0;
@@ -396,7 +398,7 @@ p{
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1180px) {
     .item{
         margin:0 1% 8px 0;
         width:32%;
