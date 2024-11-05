@@ -306,6 +306,7 @@ p{
 }
 .item p{
     margin:0;
+    white-space: nowrap;
 }
 .item .brand{
     color:var(--text-subdued);
@@ -476,7 +477,8 @@ p{
     }
     .item{
         width:auto;
-        margin:0 10px 0px 0;
+        margin:0 8px 0px 0;
+        padding-right:32px;
     }
     .item:last-child{margin:0;}
     .figure{
