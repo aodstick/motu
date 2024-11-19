@@ -39,8 +39,9 @@ body.rock:before {
 
 /* Colletion page ----------------------------------------------------------------- */
 header{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
     align-items: center;
     position:fixed;
     top:0;
@@ -61,14 +62,37 @@ header a{
     color:#666;
     text-decoration: none;
     transition: all 400ms ease-out;
+    text-transform: uppercase;
 }
 header a:hover{
     color:#fff;
     transition: all 200ms ease-in;
 }
 header a.active{
-    color:#FDDC04;
+    color:rgb(253, 220, 4);
+    text-shadow: 0px 0px 3px rgba(253,200,4,0.25),0px 0px 8px rgb(253, 220, 4, 0.5);
 }
+.logo{
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+.first{
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+.second{
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+.third{
+    grid-column-start: 4;
+    grid-row-start: 1;
+}
+.fourth{
+    grid-column-start: 5;
+    grid-row-start: 1;
+}
+
 /*
 header a.active::after{
     content:" ";
@@ -81,7 +105,7 @@ header a.active::after{
 }
 */
 main.poster{
-    margin-top:100px;
+    padding-top:100px;
 }
 .figure{
     padding: 2%;
@@ -461,6 +485,7 @@ p{
     aside{
         grid-column: 1 / span 3;
         grid-row:2;
+        align-items: flex-start;
     }
     .shade{
         grid-column: 1 / span 1;
@@ -525,10 +550,41 @@ p{
     }
 } 
 @media only screen and (max-width: 480px) {
+    header{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 12px;
+        height: 108px;
+    }
+    main.poster{
+        padding-top:108px;
+    }
+    .logo{
+        grid-column: 2 / span 2;
+        grid-row-start: 1;
+    }
+    .first{
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+    .second{
+        grid-column-start: 2;
+        grid-row-start: 2;
+    }
+    .third{
+        grid-column-start: 3;
+        grid-row-start: 2;
+    }
+    .fourth{
+        grid-column-start: 4;
+        grid-row-start: 2;
+    }
     .list{
-        padding:0px;
+        padding:20px 0;
     }
     .figure{
         width:100%;
+    }
+    .hidden-sm{
+        display: none;
     }
 }
