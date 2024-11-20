@@ -39,10 +39,6 @@ body.rock:before {
 
 /* Colletion page ----------------------------------------------------------------- */
 header{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    justify-items: center;
-    align-items: center;
     position:fixed;
     top:0;
     margin:0 auto;
@@ -54,6 +50,12 @@ header{
     box-shadow: 0 0 10px rgba(0,0,0,0.75);
     backdrop-filter: blur(2px);
     text-transform: uppercase;
+}
+header .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
 }
 header img{
     width:120px;
@@ -70,7 +72,7 @@ header a:hover{
 }
 header a.active{
     color:rgb(253, 220, 4);
-    text-shadow: 0px 0px 3px rgba(253,200,4,0.25),0px 0px 8px rgb(253, 220, 4, 0.5);
+    text-shadow: 0px 0px 3px rgba(253,200,4,0.25),0px 0px 8px rgb(253, 220, 4, 0.85);
 }
 .logo{
     grid-column-start: 3;
@@ -420,6 +422,28 @@ p{
     display: block;
     transform: translateX(0);
 }
+footer{
+    text-transform: uppercase;
+    margin-top:60px;
+    background: rgba(0, 0, 0, .5);
+    font-size: 13px;
+    padding: 16px 0;
+    color: #ccc;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+}
+footer a{
+    color:#fff;
+    text-decoration: none;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
 
 /* animation */
 .animated {
@@ -551,9 +575,11 @@ p{
 } 
 @media only screen and (max-width: 480px) {
     header{
+        height: 108px;
+    }
+    header .container{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         row-gap: 12px;
-        height: 108px;
     }
     main.poster{
         padding-top:108px;
