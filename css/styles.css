@@ -1,5 +1,7 @@
 /* variables */
 :root {
+    color-scheme: light dark;
+
     --figure-primary-color:#bc5454;
     --figure-secondary-color:#cb5421;
     --text-background-color:#222222;
@@ -18,7 +20,7 @@ body{
         Roboto, Oxygen-Sans, Ubuntu, Cantarell,
         "Helvetica Neue", sans-serif
     ;
-    color:var(--text-primary);
+    color: light-dark(red, var(--text-primary));
     font-size: 1rem;
 }
 body.rock:before {
