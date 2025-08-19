@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style type="text/css">
+        body{
+            margin:0;
+            padding:0;
+        }
+        main{
+            display: grid;
+            grid-template-columns: 50px auto 100px auto 50px;
+            grid-template-rows: 1fr 1fr 1fr;
+            column-gap: 16px;
+        }
+        main div{
+            background:red;
+        }
+    </style>
+    <body>
+        <main> 
+            <div>grid 1</div>
+            <div>grid 2</div>
+            <div>grid 3</div>
+            <div>grid 4</div>
+            <div>grid 5</div>
+            <div>grid 6</div>
+        </main>
+    </body>
+</html>
