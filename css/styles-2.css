@@ -515,6 +515,7 @@ footer a{
     }
     main.detail{
         flex-direction: column;
+        height: 100dvh;
     }
     main.detail::before{
         display: block;
