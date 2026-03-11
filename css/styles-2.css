@@ -510,7 +510,10 @@ footer a{
         background-color: var(--text-background-color);
     }
     main.detail{
-        height: 100svh;
+        height: 100dvh;
+    }
+    section, aside{
+        height: 100dvh;
     }
     .item{
         margin:0 1% 8px 0;
@@ -541,6 +544,7 @@ footer a{
         padding:32px 32px 16px 60px;
         z-index: 10;
         flex:0;
+        height:auto;
     }
     nav{
         position:fixed;
@@ -584,6 +588,7 @@ footer a{
         order:2;
         background-image: none;
         z-index: 20;
+        height:auto;
     }
     .tabs-content {
         grid-template-rows:auto;
