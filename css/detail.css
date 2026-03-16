@@ -108,9 +108,8 @@ p{
     box-sizing: border-box;
     border-radius:8px;
     color:var(--text-subdued);
-    font-size:1rem;
-    margin:0 1% 8px 0;
-    width:24%;
+    margin:0 2% 2% 0;
+    width:31%;
     transition: all 200ms ease-in;
     position:relative;
 }
@@ -237,8 +236,10 @@ aside{
         height: 100dvh;
     }
     .item{
-        margin:0 1% 8px 0;
-        width:32%;
+        margin:0 2% 2% 0;
+        width:48%;
+        padding:12px;
+        font-size:14px;
     }
     .tabs-content {
         height: 100dvh;
@@ -265,7 +266,7 @@ aside{
     }
     section{
         order: 1;
-        padding:32px 32px 16px 60px;
+        padding:32px 0px 16px 60px;
         z-index: 10;
         flex:0;
         height:auto;
@@ -291,16 +292,22 @@ aside{
     .container{
         margin:0;
     }
+    .container p{
+        padding-right:16px;
+    }
+    .container h1{
+        padding-right:16px;
+    }
+    .lead{
+        margin-bottom:16px;
+    }
     .collection{
         margin:0 0 4px 0;
-        padding:4px 0 16px 0;
+        padding:4px 16px 16px 0;
         display: flex;
         flex-wrap: nowrap;
         overflow-x: scroll;
         overflow-y: hidden;
-    }
-    .lead{
-        margin-bottom:16px;
     }
     .item{
         width:auto;
