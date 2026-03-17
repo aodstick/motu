@@ -34,7 +34,7 @@ section{
 nav{
     display: flex;
     justify-content: flex-end;
-    margin:5%;
+    margin:4%;
 }
 nav a{
     color:var(--text-subdued);
@@ -66,7 +66,7 @@ nav a:hover .close{
     transition:all 400ms ease-in-out;
 }
 .container{
-    margin:5% 10%;
+    margin:6% 12%;
 }
 .affiliation{
     text-transform: uppercase;
@@ -98,6 +98,7 @@ p{
     padding:0;
     list-style: none;
     display: flex;
+    gap:8px;
     align-content: space-between;
     flex-wrap: wrap;
 }
@@ -108,8 +109,8 @@ p{
     box-sizing: border-box;
     border-radius:8px;
     color:var(--text-subdued);
-    margin:0 2% 2% 0;
-    width:31%;
+    margin:0;
+    flex:1;
     transition: all 200ms ease-in;
     position:relative;
 }
@@ -235,11 +236,8 @@ aside{
     section, aside{
         height: 100dvh;
     }
-    .item{
-        margin:0 2% 2% 0;
-        width:48%;
-        padding:12px;
-        font-size:14px;
+    .item p{
+        font-size:16px;
     }
     .tabs-content {
         height: 100dvh;
@@ -266,7 +264,7 @@ aside{
     }
     section{
         order: 1;
-        padding:32px 0px 16px 60px;
+        padding:32px 0px 16px 0px;
         z-index: 10;
         flex:0;
         height:auto;
@@ -293,28 +291,37 @@ aside{
         margin:0;
     }
     .container p{
-        padding-right:16px;
+        padding:0 16px 0 60px;
     }
     .container h1{
-        padding-right:16px;
+        padding:0 16px 0 60px;
     }
     .lead{
         margin-bottom:16px;
     }
     .collection{
-        margin:0 0 4px 0;
-        padding:4px 16px 16px 0;
+        margin:0 0 16px;
+        padding:0 16px 8px 16px;
         display: flex;
         flex-wrap: nowrap;
         overflow-x: scroll;
         overflow-y: hidden;
     }
     .item{
-        width:auto;
-        margin:0 8px 0px 0;
-        padding-right:32px;
+        margin:0;
+        padding:10px 32px 10px 10px;
     }
-    .item:last-child{margin:0;}
+    .item:first-child{margin-left:44px;}
+
+    .item p{
+        padding:0;
+    }
+    .item p.brand{
+        font-size: 14px;
+    }
+    .item p.pop{
+        font-size:12px;
+    }
     aside{
         order:2;
         background-image: none;
@@ -323,6 +330,7 @@ aside{
     }
     .tabs-content {
         grid-template-rows:auto;
+        grid-template-columns: auto;
         height: auto;
     }
     .tabs-content li{
