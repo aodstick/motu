@@ -115,7 +115,7 @@ p{
 .item{
     border:1px solid var(--text-hover-color);
     background:var(--text-hover-color);
-    padding:16px;
+    padding:16px 36px 16px 16px;
     box-sizing: border-box;
     border-radius:8px;
     color:var(--text-subdued);
@@ -123,6 +123,9 @@ p{
     flex:1;
     transition: all 200ms ease-in;
     position:relative;
+}
+.item:only-child{
+    flex:0;
 }
 .item p{
     margin:0;
@@ -342,9 +345,6 @@ aside{
     .item{
         margin:0;
         padding:12px 36px 12px 12px;
-    }
-    .item:only-child{
-        flex:0;
     }
     .item:first-child{margin-left:44px;}
 
