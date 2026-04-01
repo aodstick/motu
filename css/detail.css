@@ -371,7 +371,7 @@ aside{
     .tabs-content .img-responsive{
         width:auto;
         height:auto;
-        max-height:360px;
+        max-height:400px;
         margin:0 auto;
         display: block;
     }
