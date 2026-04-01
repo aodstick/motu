@@ -343,6 +343,9 @@ aside{
         margin:0;
         padding:12px 36px 12px 12px;
     }
+    .item:only-child{
+        flex:0;
+    }
     .item:first-child{margin-left:44px;}
 
     .item p{
