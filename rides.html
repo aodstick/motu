@@ -20,8 +20,16 @@
                 <a href="rides.html" class="second active">Rides</a>
                 <a href="playsets.html" class="third"><span class="hidden-sm">Play</span>sets</a>
                 <a href="miscellaneous.html" class="fourth">Misc<span class="hidden-sm">ellaneous</span></a>
+                <span class="navClose" onclick="openNav()">&#9776;</span>
             </div>
         </header>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Figures</a>
+            <a href="rides.html" class="active">Rides</a>
+            <a href="playsets.html">Playsets</a>
+            <a href="miscellaneous.html">Miscellaneous</a>
+        </div>
         <main class="poster">
             <div class="groups">
                 <div class="list heroes">
@@ -84,9 +92,18 @@
             </div>
             <footer>
                 <div class="container">
-                &copy;2024 <span class="text-uppercase">Act of Defiance</span> &nbsp; | &nbsp; <a href="http://actofdefiance.org">AOD</a>
+                &copy;2026 <span class="text-uppercase">Act of Defiance</span> &nbsp; | &nbsp; <a href="http://actofdefiance.org">AOD</a>
             </div>
             </footer>
         </main>
+        <script>
+            function openNav() {
+            document.getElementById("mySidenav").style.width = "100%";
+            }
+
+            function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
     </body>
 </html>

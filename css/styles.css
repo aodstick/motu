@@ -45,7 +45,7 @@ header{
     top:0;
     margin:0 auto;
     box-sizing: border-box;
-    z-index: 9999;
+    z-index: 100;
     width:100%;
     background-color:light-dark(blue, rgba(0,0,0,0.90));
     padding:16px;
@@ -96,7 +96,9 @@ header a.active{
     grid-column-start: 5;
     grid-row-start: 1;
 }
-
+.navClose{
+    display: none;
+}
 /*
 header a.active::after{
     content:" ";
@@ -579,34 +581,21 @@ footer a{
 } 
 @media only screen and (max-width: 480px) {
     header{
-        height: 108px;
+        height: auto;
     }
     header .container{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         row-gap: 12px;
+        padding:0;
     }
     main.poster{
-        padding-top:108px;
+        padding-top:80px;
     }
     .logo{
         grid-column: 2 / span 2;
-        grid-row-start: 1;
     }
-    .first{
-        grid-column-start: 1;
-        grid-row-start: 2;
-    }
-    .second{
-        grid-column-start: 2;
-        grid-row-start: 2;
-    }
-    .third{
-        grid-column-start: 3;
-        grid-row-start: 2;
-    }
-    .fourth{
-        grid-column-start: 4;
-        grid-row-start: 2;
+    .first, .second, .third, .fourth{
+        display: none;
     }
     .list{
         padding:20px 0;
@@ -616,5 +605,53 @@ footer a{
     }
     .hidden-sm{
         display: none;
+    }
+    .navClose{
+        display: block;
+        grid-column:4;
+        font-size:32px;
+    }
+    .sidenav {
+        height: 100%; /* 100% Full-height */
+        width: 0; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 200; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: #111; /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    }
+
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color:#666;
+        display: block;
+        transition: all 400ms ease-out;
+        text-transform: uppercase;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+        color:#fff;
+        transition: all 200ms ease-in;
+    }
+
+    .sidenav a.active{
+        color:rgb(253, 220, 4);
+        text-shadow: 0px 0px 3px rgba(253,200,4,0.25),0px 0px 8px rgb(253, 220, 4, 0.85);
+    }
+
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
     }
 }
