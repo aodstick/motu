@@ -79,7 +79,7 @@ nav a:hover .close{
 .affiliation{
     text-transform: uppercase;
     margin-bottom: 0px;
-    color:light-dark(var(--figure-primary-color), var(--figure-secondary-color));
+    color: var(--figure-secondary-color);
     font-size: clamp(0.875rem, 0.607rem + 0.714vw, 1rem);
     line-height: 1;
 }
@@ -154,7 +154,7 @@ p{
 }
 .item.active{
     border:1px solid;
-    border-color: light-dark(var(--figure-primary-color), var(--figure-secondary-color));
+    border-color: var(--figure-secondary-color);
     color: light-dark(var(--text-primary-light), var(--text-primary-dark));
 }
 .item:hover{
