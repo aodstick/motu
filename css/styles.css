@@ -1,27 +1,30 @@
 /* variables */
 :root {
     color-scheme: light dark;
-
-    --figure-primary-color:#bc5454;
-    --figure-secondary-color:#cb5421;
-    --text-background-color:#222222;
-    --text-hover-color:#111111;
-    --text-primary:#ffffff;
-    --text-subdued:#666666;
+    --text-background-dark:#222222;
+    --text-background-light:#eeeeee;
+    --text-hover-dark:#111111;
+    --text-hover-light:#ffffff;
+    --text-primary-dark:#ffffff;
+    --text-primary-light:#222222;
+    --text-subdued-dark:#666666;
+    --text-subdued-light:#999999;
 }
+
+/* content */
 html{
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
+    text-wrap: balance;
 }
 body{
     margin:0;
     padding:0;
-    background-color:var(--text-background-color);
+    background-color: light-dark(var(--text-background-light), var(--text-background-dark));
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-        "Helvetica Neue", sans-serif
-    ;
-    color: light-dark(red, var(--text-primary));
+        "Helvetica Neue", sans-serif;
+    color: light-dark(var(--text-primary-light), var(--text-primary-dark));
     font-size: 1rem;
 }
 body.rock:before {
@@ -42,7 +45,7 @@ body.rock:before {
 
 /* Colletion page ----------------------------------------------------------------- */
 header{
-    position:fixed;
+    position:sticky;
     top:0;
     margin:0 auto;
     box-sizing: border-box;
@@ -97,22 +100,14 @@ header a.active{
     grid-column-start: 5;
     grid-row-start: 1;
 }
+.sidenav{
+    display: none;
+}
 .navClose{
     display: none;
 }
-/*
-header a.active::after{
-    content:" ";
-    display: block;
-    height:4px;
-    width:100px;
-    background-color:#FDDC04;
-    position: absolute;
-    bottom:0;
-}
-*/
 main.poster{
-    padding-top:100px;
+    padding-top:20px;
 }
 .figure{
     padding: 2%;
@@ -149,18 +144,6 @@ main.poster{
 div.square{
     background: linear-gradient(180deg, #555 0%, #111 100%);
 }
-/*.heroes div.square{
-    background: linear-gradient(180deg, #630101 0%, #111 100%);
-}
-.enemy div.square{
-    background: linear-gradient(180deg, #52A8F7 0%, #1E2B5A 100%);
-}
-.snake div.square{
-    background: linear-gradient(180deg, #69F752 0%, #225A1E 100%);
-}
-.horde div.square{
-    background: linear-gradient(180deg, #E765FC 0%, #601C89 100%);
-}*/
 .name{
     display: grid;
     grid-template-columns: 10% 80% 10%;
@@ -190,103 +173,14 @@ div.square{
     display: block;
     font-size: clamp(0.5rem, 0.607rem + 0.714vw, .75rem);
     font-weight: 400;
-    color:var(--text-subdued);
+    color:var(--text-subdued-dark);
 }
 .figure:hover .name{
     background: #111;
     transition: all 200ms ease-in;
 }
 
-/* detail page */
-main.detail{
-    display: grid;
-    grid-template-columns: 5% 40% 5% 5% 40% 5%;
-    grid-template-rows: 10% 80% 10%;
-    height: 100vh;
-    background-color: var(--text-background-color);
-}
-nav{
-    grid-column:6;
-    grid-row:1;
-    z-index: 30;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-nav a{
-    color:var(--text-subdued);
-    text-decoration: none;
-    font-size:14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border:2px solid var(--text-subdued);
-    border-radius:50%;
-    width:40px;
-    height:40px;
-    background-color: var(--text-background-color);
-}
-nav a:hover{
-    color:var(--text-subdued);
-    border:2px solid var(--text-primary);
-    background-color:var(--text-hover-color);
-    box-shadow: 0 0 20px rgba(0,0,0,0.75);
-}
-nav .close{
-    fill:var(--text-subdued);
-    rotate: 0deg;
-    transition:all 200ms ease-in-out;
-}
-nav a:hover .close{
-    fill:var(--text-primary);
-    rotate: 90deg;
-    transition:all 400ms ease-in-out;
-}
-section{
-    grid-column: 5;
-    grid-row: 2;
-    z-index: 10;
-}
-aside{
-    grid-column: 2;
-    grid-row:2;
-    z-index: 20;
-    display: flex;
-    height: 100%;
-    align-items: center;
-}
-.shade{
-    grid-column: 1 / span 3;
-    grid-row: 1 / span 3;
-    z-index: 1;
-    background: var(--figure-primary-color);
-    background: linear-gradient(150deg, var(--figure-primary-color) 0%, var(--figure-secondary-color) 100%);
-}
-.texture{
-    grid-column: 1 / span 3;
-    grid-row: 1 / span 3;
-    z-index: 2;
-    background-image: url(../images/paper.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    mix-blend-mode: multiply;
-}
 /* content */
-.affiliation{
-    text-transform: uppercase;
-    margin-bottom: 0px;
-    color:var(--figure-secondary-color);
-    font-size: clamp(0.875rem, 0.607rem + 0.714vw, 1rem);
-    line-height: 1;
-}
-h1{
-    font-weight: 900;
-    font-size: clamp(3.5rem, -1.911rem + 13.095vw, 6rem);
-    line-height: 1;
-    margin:10px 0;
-    padding:0;
-    text-shadow: 0px 0px 10px #000;
-}
 h2{
     font-weight: 600;
     font-size: 1rem;
@@ -301,16 +195,6 @@ h2{
     background:rgba(0, 0, 0, 0.25);
     border-radius: 8px 8px 0 0;
     border-bottom:1px solid rgba(255,255,255,.5);
-}
-p{
-    margin:0 0 10px 0;
-    padding:0;
-    font-size: clamp(1rem, 0.643rem + 0.952vw, 1.5rem);
-    line-height: 1;
-}
-.lead{
-    margin-bottom:48px;
-    line-height: 1.3;
 }
 .collection{
     margin:0;
@@ -339,95 +223,10 @@ p{
 .list.heroes, .list.hordes, .list.rebels{
     direction: rtl;
 }
-.item{
-    border:1px solid var(--text-hover-color);
-    background:var(--text-hover-color);
-    padding:16px;
-    box-sizing: border-box;
-    border-radius:8px;
-    color:var(--text-subdued);
-    font-size:1rem;
-    margin:0 1% 8px 0;
-    width:24%;
-    transition: all 200ms ease-in;
-}
-.item p{
-    margin:0;
-    white-space: nowrap;
-}
-.item .brand{
-    color:var(--text-subdued);
-    font-size:0.875rem;
-    font-weight: normal;
-    display: block;
-    text-transform: uppercase;
-    margin-bottom:4px;
-}
-.item:hover{
-    color:var(--text-primary);
-    transition: all 100ms ease-in;
-}
-.item.active{
-    border:1px solid var(--figure-secondary-color);
-    color:var(--text-primary);
-}
-.item:hover{
-    cursor:pointer;
-}
-.pop{
-    font-size:12px;
-    font-weight: bold;
-    background: #000;
-    width:28px;
-    height:28px;
-    border-radius:28px;
-    color:#fff;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    margin-left:4px;
-    border:1px solid #666;
-    position:absolute;
-    top:-4px;
-    right:-4px;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.75);
-}
-.tabs-content {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.tabs-content li {
-    display: none;
-}
 .img-responsive{
     max-width: 100%;
     z-index: 5;
     filter: drop-shadow(0px 0px 20px rgba(0,0,0,.25));
-}
-
-
-.menu-toggler{
-    left: 10px;
-    top: 10px;
-    opacity: 0;
-    position: absolute;
-}
-.menu-toggler:checked + .show-menu span{
-        background: transparent;
-}
-.menu-toggler:checked + .show-menu:after {
-    top: 9px;
-    transform: rotate(45deg);
-}
-.menu-toggler:checked + .show-menu:before {
-    top: 9px;
-    transform: rotate(-45deg);
-}
-.menu-toggler:checked ~ .nav{
-    display: block;
-    transform: translateX(0);
 }
 footer{
     text-transform: uppercase;
@@ -452,51 +251,13 @@ footer a{
     z-index: 2;
 }
 
-/* animation */
-.animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
-
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-.fadeInUp {
-    -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp;
-}
 .figure{
     width:25%;
 }
 /* responsive */
 @media only screen and (max-width: 1800px) {
-    nav{
-        justify-content: flex-start;
-    }
-    nav a{
-        width:32px;
-        height:32px;
-    }
     .figure{
         width:33%;
-    }
-}
-
-@media only screen and (max-width: 1180px) {
-    .item{
-        margin:0 1% 8px 0;
-        width:32%;
     }
 }
 
@@ -504,78 +265,6 @@ footer a{
     header{
         padding:16px;
     }
-    main.detail{
-        grid-template-columns: 8% 80% 12%;
-        grid-template-rows: auto 1fr;
-    }
-    section{
-        grid-column: 2 / span 2;
-        grid-row:1;
-        padding:30px 30px 20px 30px;
-    }
-    aside{
-        grid-column: 1 / span 3;
-        grid-row:2;
-        align-items: flex-start;
-    }
-    .shade{
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 2;
-    }
-    .texture{
-        display: none;
-    }
-    nav{
-        grid-column:3;
-        align-items: flex-start;
-        justify-content: center;
-        padding:16px 8px 0 0 ;
-    }
-    nav a{
-        color:var(--text-subdued);
-        text-decoration: none;
-        font-size:14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border:0px solid var(--text-subdued);
-        width:40px;
-        height:40px;
-        background-color: var(--text-background-color);
-    }
-    nav a:hover{
-        color:var(--text-subdued);
-        border:none;
-        background-color:none;
-        box-shadow: 0 0 20px rgba(0,0,0,0.75);
-    }
-    nav .close{
-        fill:var(--text-subdued);
-        rotate: 0deg;
-        transition:all 200ms ease-in-out;
-    }
-    nav a:hover .close{
-        fill:var(--text-primary);
-        rotate: 90deg;
-        transition:all 400ms ease-in-out;
-    }
-    .lead{
-        margin-bottom:16px;
-    }
-    .collection{
-        margin:0 0 4px 0;
-        padding:4px 0 16px 0;
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-        overflow-y: hidden;
-    }
-    .item{
-        width:auto;
-        margin:0 8px 0px 0;
-        padding-right:32px;
-    }
-    .item:last-child{margin:0;}
     .figure{
         width:50%;
     }
@@ -588,9 +277,6 @@ footer a{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         row-gap: 12px;
         padding:0;
-    }
-    main.poster{
-        padding-top:80px;
     }
     .logo{
         grid-column: 2 / span 2;
@@ -623,6 +309,7 @@ footer a{
         overflow-x: hidden; /* Disable horizontal scroll */
         padding-top: 60px; /* Place content 60px from the top */
         transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        display: block;
     }
 
     /* The navigation menu links */
