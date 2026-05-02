@@ -20,7 +20,7 @@ html{
 body{
     margin:0;
     padding:0;
-    background-color: light-dark(var(--text-background-light), var(--text-background-dark));
+    background-color: light-dark(#fff, var(--text-background-dark));
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell,
         "Helvetica Neue", sans-serif;
@@ -36,11 +36,14 @@ body.rock:before {
     width: 100%;
     height: 100%;
     z-index: -10;
-    background: url(../images/background.webp) no-repeat center center;
+    background-image: url(../images/background.webp);
+    background-repeat: no-repeat;
+    background-position: center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    filter: opacity(50%);
   }
 
 /* Colletion page ----------------------------------------------------------------- */
@@ -51,7 +54,7 @@ header{
     box-sizing: border-box;
     z-index: 100;
     width:100%;
-    background-color:light-dark(blue, rgba(0,0,0,0.90));
+    background-color:light-dark(rgba(255,255,255,0.90), rgba(0,0,0,0.90));
     padding:16px;
     box-shadow: 0 0 10px rgba(0,0,0,0.75);
     backdrop-filter: blur(2px);
@@ -67,18 +70,18 @@ header img{
     width:120px;
 }
 header a{
-    color:#666;
+    color:light-dark(var(--text-subdued-light), var(--text-subdued-dark));
     text-decoration: none;
     transition: all 400ms ease-out;
     text-transform: uppercase;
 }
 header a:hover{
-    color:#fff;
+    color: light-dark(rgb(213, 2, 2), rgb(253, 220, 4));
     transition: all 200ms ease-in;
 }
 header a.active{
-    color:rgb(253, 220, 4);
-    text-shadow: 0px 0px 3px rgba(253,200,4,0.25),0px 0px 8px rgb(253, 220, 4, 0.85);
+    color: light-dark(rgb(213, 2, 2), rgb(253, 220, 4));
+    font-weight: bold;
 }
 .logo{
     grid-column-start: 3;
@@ -150,7 +153,7 @@ div.square{
     grid-template-rows: auto;
 }
 .name{
-    color: #fff;
+    color:light-dark(var(--text-primary-light), var(--text-primary-dark));
     padding:8px;
     border-radius: 8px;
     display: block;
@@ -164,7 +167,7 @@ div.square{
     text-align: center;
     transition: all 400ms ease-out;
     /* From https://css.glass */
-    background: rgba(0, 0, 0, 0.7);
+    background-color: light-dark(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.7));
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -176,23 +179,23 @@ div.square{
     color:var(--text-subdued-dark);
 }
 .figure:hover .name{
-    background: #111;
+    background: light-dark(var(--text-hover-light), var(--text-hover-dark));
     transition: all 200ms ease-in;
 }
 
 /* content */
 h2{
+    color: light-dark(var(--text-primary-light), var(--text-primary-dark));
     font-weight: 600;
     font-size: 1rem;
     line-height: 1;
     margin:10px;
     padding:10px;
-    text-shadow: 0px 0px 10px #000;
     text-align: center;
     display: block;
     width:100%;
     text-transform: uppercase;
-    background:rgba(0, 0, 0, 0.25);
+    background-color: light-dark(rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.25));
     border-radius: 8px 8px 0 0;
     border-bottom:1px solid rgba(255,255,255,.5);
 }
@@ -231,16 +234,16 @@ h2{
 footer{
     text-transform: uppercase;
     margin-top:60px;
-    background: rgba(0, 0, 0, .5);
+    background-color: light-dark(rgba(255, 255, 255, .80), rgba(0, 0, 0, .5));
     font-size: 13px;
     padding: 16px 0;
-    color: #ccc;
+    color: light-dark(var(--text-primary-light), var(--text-primary-dark));
     width: 100%;
     z-index: 100;
     text-align: center;
 }
 footer a{
-    color:#fff;
+    color: light-dark(var(--text-primary-light), var(--text-primary-dark));
     text-decoration: none;
 }
 .container {
