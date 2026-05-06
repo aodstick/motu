@@ -20,7 +20,7 @@ html{
 body{
     margin:0;
     padding:0;
-    background-color: light-dark(#fff, var(--text-background-dark));
+    background-color: light-dark(#2f1919, var(--text-background-dark));
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell,
         "Helvetica Neue", sans-serif;
