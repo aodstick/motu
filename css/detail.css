@@ -148,6 +148,9 @@ p{
     margin-bottom:4px;
     white-space: nowrap;
 }
+.also a{
+    white-space: nowrap;
+}
 .item:hover{
     color: light-dark(var(--text-primary-light), var(--text-primary-dark));
     transition: all 100ms ease-in;
